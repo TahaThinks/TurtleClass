@@ -4,7 +4,7 @@ from random import randint
 turtle.colormode(255)
 
 tim = Turtle()
-sides = list(range(3, 20))
+sides = list(range(3, 11))
 
 
 def line_color():
@@ -14,15 +14,17 @@ def line_color():
     print(r, g, b)
     tim.pencolor((r, g, b))
 
-def draw_shape(side, angle):
+
+def draw_shape(side):
     line_color()
+    angle = 360 / side
     for _ in range(side):
         tim.forward(100)
         tim.right(angle)
 
 
 for shape_side in sides:
-    draw_shape(shape_side, 360 / shape_side)
+    draw_shape(shape_side)
 
 
 
