@@ -1,30 +1,19 @@
 import turtle
 from turtle import Turtle, Screen
-from random import randint
-turtle.colormode(255)
+from random import randrange,choice
+
 
 tim = Turtle()
-sides = list(range(3, 11))
+colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+tim.pensize(5)
+tim.speed('fast')
 
-
-def line_color():
-    r = randint(0, 255)
-    g = randint(0, 255)
-    b = randint(0, 255)
-    print(r, g, b)
-    tim.pencolor((r, g, b))
-
-
-def draw_shape(side):
-    line_color()
-    angle = 360 / side
-    for _ in range(side):
-        tim.forward(100)
-        tim.right(angle)
-
-
-for shape_side in sides:
-    draw_shape(shape_side)
+for _ in range(500):
+    tim.pencolor(choice(colours))
+    angle = randrange(90, 360, 90)
+    tim.forward(50)
+    tim.right(angle)
+    # print(angle)
 
 
 
