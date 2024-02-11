@@ -25,13 +25,16 @@ def random_color():
 
 tom = Turtle()
 tom.pensize(3)
-tom.speed("fast")
+tom.speed("fastest")
 
-for _ in range(100):
-    tom.color(random_color())
-    tom.circle(100)
-    tom.setheading(tom.heading()+10)
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360/ size_of_gap)):
+        tom.color(random_color())
+        tom.circle(100)
+        current_heading = tom.heading()
+        tom.setheading(current_heading + size_of_gap)
 
+draw_spirograph(2)
 
 
 screen = Screen()
